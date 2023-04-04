@@ -43,6 +43,7 @@
     </style>
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/compress.css" />
+    <link rel="stylesheet" href="./styles/resize.css" />
     <script src="https://kit.fontawesome.com/04f0317862.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
   </head>
@@ -58,30 +59,6 @@
           </nav>
       <main id="content"></main>
     </div>
-    <script>
-      const contentElement = document.getElementById('content');
-
-      function loadPage(pageName) {
-        fetch(`pages/${pageName}.html`)
-          .then((response) => response.text())
-          .then((html) => {
-            contentElement.innerHTML = html;
-            if (pageName === 'compress') {
-              const compressScript = document.createElement('script');
-              compressScript.src = './scripts/compress.js';
-              compressScript.async = true;
-              contentElement.appendChild(compressScript);
-            }
-          });
-      }
-
-
-      document.getElementById('nav-home').addEventListener('click', () => loadPage('home'));
-      document.getElementById('nav-compress').addEventListener('click', () => loadPage('compress'));
-      document.getElementById('nav-resize').addEventListener('click', () => loadPage('resize'));
-      document.getElementById('nav-about').addEventListener('click', () => loadPage('about'));
-
-      loadPage('home');
-    </script>
+    <script src="./renderer.js" type="module"></script>
   </body>
 </html>

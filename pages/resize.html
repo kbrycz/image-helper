@@ -1,2 +1,24 @@
-<h1>Resize</h1>
-<p>Resize your images to fit different dimensions and aspect ratios.</p>
+<body>
+    <div class="resize-container">
+      <h1>Image Resizer</h1>
+      <p class="resize-about">Welcome to the Image Resizing page! Simply input the desired dimensions for your image and watch it transform before your eyes. Please note that inputting smaller dimensions than the original image may result in loss of image quality.</p>
+      <input
+        type="file"
+        id="inputImage"
+        accept="image/jpeg, image/png"
+        class="input-image"
+      />
+      <div class="input-dimensions">
+        <label for="widthInput" class="input-label">Width (px): </label>
+        <input type="number" id="widthInput" min="1" class="dimension-input">
+        <label for="heightInput" class="input-label">Height (px): </label>
+        <input type="number" id="heightInput" min="1" class="dimension-input">
+      </div>      
+      <p class="error-message" id="errorMessage"></p>
+      <button id="resizeBtn" class="resize-btn disabled" disabled>Resize</button>
+      <a id="downloadBtn" class="download-btn" href="#" download style="display:none;">
+        Download Resized Image
+      </a>
+    </div>
+  </body>
+  

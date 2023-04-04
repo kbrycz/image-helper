@@ -1,15 +1,46 @@
 {
   "name": "image-helper",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Image Helper is a powerful app designed to help you optimize images for web and mobile development. With features like compression and resizing, you can improve your image's performance and reduce loading times.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "build": {
+    "appId": "com.kbrycz2555.image.helper",
+    "productName": "Image Helper",
+    "files": [
+      "main.js",
+      "index.html",
+      "resize.html",
+      "resize.js",
+      "resize.css",
+      "compress.html",
+      "compress.js",
+      "compress.css",
+      "about.html",
+      "renderer.js"
+    ],
+    "icon": "icons/icon",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+  },
   "devDependencies": {
-    "electron": "^15.3.2"
+    "electron": "^14.0.0",
+    "electron-builder": "^22.11.7"
   }
 }
