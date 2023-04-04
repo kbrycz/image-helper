@@ -13,15 +13,10 @@
     "productName": "Image Helper",
     "files": [
       "main.js",
-      "index.html",
-      "resize.html",
-      "resize.js",
-      "resize.css",
-      "compress.html",
-      "compress.js",
-      "compress.css",
-      "about.html",
-      "renderer.js"
+      "renderer.js",
+      "*.html",
+      "*.js",
+      "*.css"
     ],
     "icon": "icons/icon",
     "mac": {
